@@ -1,22 +1,52 @@
 {
   "name": "samara98-portfolio",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "author": "Sulthon Abdul Malik <sulthon.abdmalik@gmail.com>",
+  "license": "MIT",
+  "description": "Personal Portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettify": "prettier -w \"src/**/*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}\""
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
+    "@chakra-ui/react": "^1.6.6",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^4.1.17",
     "next": "11.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-reveal": "^1.2.2"
   },
   "devDependencies": {
     "@types/react": "17.0.18",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
+    "husky": "^4",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
     "typescript": "4.3.5"
-  }
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{md,html,css,scss,json,js,jsx,ts,tsx,vue}": "prettier -w"
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
+  "repository": "git@github.com:samara98/samara98-portfolio.git"
 }
