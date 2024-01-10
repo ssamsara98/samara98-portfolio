@@ -1,3 +1,5 @@
+'use client';
+import { Link } from '@chakra-ui/next-js';
 import {
   Box,
   Flex,
@@ -6,18 +8,18 @@ import {
   Stack,
   Collapse,
   Icon,
-  Link,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
+  // useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
+// import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import NLink from 'next/link';
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 
-export default function Navbar() {
+export function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -33,26 +35,26 @@ export default function Navbar() {
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}
       >
-        <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}
-        >
+        <Flex flex={{ base: 1, md: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', md: 'none' }}>
           <IconButton
             onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+            // icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+            // icon={isOpen ? <Icon as={faclose} w={3} h={3} /> : <Icon as={} w={5} h={5} />}
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+            // textAlign={useBreakpointValue({ base: 'center', md: 'left' }, {ssr: false})}
+            textAlign={{ base: 'center', md: 'left' }}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}
             fontWeight={'bold'}
           >
-            <NLink href="/">Samara98</NLink>
+            <Link as={NLink} href="/">
+              Samara98
+            </Link>
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -80,6 +82,7 @@ const DesktopNav = () => {
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Link
+                as={NLink}
                 p={2}
                 fontSize={'sm'}
                 fontWeight={500}
@@ -88,22 +91,14 @@ const DesktopNav = () => {
                   textDecoration: 'none',
                   color: linkHoverColor,
                 }}
+                href={navItem.href ?? '#'}
               >
-                <NLink href={navItem.href ?? '#'} passHref>
-                  {navItem.label}
-                </NLink>
+                {navItem.label}
               </Link>
             </PopoverTrigger>
 
             {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={'xl'}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={'xl'}
-                minW={'sm'}
-              >
+              <PopoverContent border={0} boxShadow={'xl'} bg={popoverContentBgColor} p={4} rounded={'xl'} minW={'sm'}>
                 <Stack>
                   {navItem.children.map((child) => (
                     <DesktopSubNav key={child.label} {...child} />
@@ -120,35 +115,37 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
-    <NLink href={href ?? '#'} passHref>
-      <Link
-        role={'group'}
-        display={'block'}
-        p={2}
-        rounded={'md'}
-        _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
-      >
-        <Stack direction={'row'} align={'center'}>
-          <Box>
-            <Text transition={'all .3s ease'} _groupHover={{ color: 'pink.400' }} fontWeight={500}>
-              {label}
-            </Text>
-            <Text fontSize={'sm'}>{subLabel}</Text>
-          </Box>
-          <Flex
-            transition={'all .3s ease'}
-            transform={'translateX(-10px)'}
-            opacity={0}
-            _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-            justify={'flex-end'}
-            align={'center'}
-            flex={1}
-          >
-            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
-          </Flex>
-        </Stack>
-      </Link>
-    </NLink>
+    <Link
+      as={NLink}
+      href={href ?? '#'}
+      // passHref
+      role={'group'}
+      display={'block'}
+      p={2}
+      rounded={'md'}
+      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+    >
+      <Stack direction={'row'} align={'center'}>
+        <Box>
+          <Text transition={'all .3s ease'} _groupHover={{ color: 'pink.400' }} fontWeight={500}>
+            {label}
+          </Text>
+          <Text fontSize={'sm'}>{subLabel}</Text>
+        </Box>
+        <Flex
+          transition={'all .3s ease'}
+          transform={'translateX(-10px)'}
+          opacity={0}
+          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
+          justify={'flex-end'}
+          align={'center'}
+          flex={1}
+        >
+          {/* <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} /> */}
+          <Icon color={'pink.400'} w={5} h={5} as={FaChevronRight} />
+        </Flex>
+      </Stack>
+    </Link>
   );
 };
 
@@ -182,7 +179,8 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         </Text>
         {children && (
           <Icon
-            as={ChevronDownIcon}
+            // as={ChevronDownIcon}
+            as={FaChevronDown}
             transition={'all .25s ease-in-out'}
             transform={isOpen ? 'rotate(180deg)' : ''}
             w={6}
@@ -202,9 +200,9 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <NLink key={child.label} href={child.href ?? '#'} passHref>
-                <Link py={2}>{child.label}</Link>
-              </NLink>
+              <Link as={NLink} key={child.label} href={child.href ?? '#'} py={2}>
+                {child.label}
+              </Link>
             ))}
         </Stack>
       </Collapse>

@@ -1,11 +1,13 @@
-import { Heading, Link, Text, VStack } from '@chakra-ui/react';
+"use client"
+import { Link } from '@chakra-ui/next-js';
+import { Heading, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 
-const Projects: React.FC<{ id: string }> = ({ id }) => {
+export const Projects: React.FC<{ id: string }> = ({ id }) => {
   return (
     <VStack id={id} align={'center'} spacing={{ base: 8, md: 10 }} py={{ base: 20, md: 28 }}>
-      <Fade top>
+      {/* <Fade top> */}
         <Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: '3xl', md: '4xl' }}>
           <Text
             as={'span'}
@@ -24,11 +26,11 @@ const Projects: React.FC<{ id: string }> = ({ id }) => {
             Projects
           </Text>
         </Heading>
-      </Fade>
-      <Fade bottom>
+      {/* </Fade> */}
+      {/* <Fade bottom> */}
         <Text
           fontSize={{ base: '2xl', md: '4xl' }}
-          bgGradient="linear(to-r, cyan.400, blue.500, purple.600)"
+          bgGradient="linear(to-r, blue.500, purple.600)"
           bgClip="text"
         >
           Coming Soon...
@@ -39,9 +41,8 @@ const Projects: React.FC<{ id: string }> = ({ id }) => {
             Github
           </Link>
         </Text>
-      </Fade>
+      {/* </Fade> */}
     </VStack>
   );
 };
 
-export default Projects;

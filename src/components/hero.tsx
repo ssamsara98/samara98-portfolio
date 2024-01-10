@@ -1,29 +1,20 @@
-import {
-  Stack,
-  Flex,
-  Box,
-  Heading,
-  Text,
-  Image,
-  Icon,
-  IconProps,
-  useColorModeValue,
-} from '@chakra-ui/react';
+'use client';
+import { Stack, Flex, Box, Heading, Text, Image, Icon, IconProps, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import samara98 from '~/assets/samara98.jpg';
+import ssamsara98 from '~/assets/ssamsara98.jpg';
 
-const HeroHome: React.FC<{ id?: string }> = ({ id }) => {
+export const HeroHome: React.FC<{ id?: string }> = ({ id }) => {
   return (
     <Stack
       id={id}
       align={'center'}
-      spacing={{ base: 8, md: 10 }}
-      py={{ base: 20, md: 28 }}
-      direction={{ base: 'column', md: 'row' }}
+      spacing={{ base: 8, tablet: 10 }}
+      py={{ base: 20, tablet: 28 }}
+      direction={{ base: 'column', tablet: 'row' }}
     >
       <Fade top>
-        <Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
+        <Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: '3xl', tablet: '4xl', desktop: '6xl' }}>
           <Text
             as={'span'}
             position={'relative'}
@@ -48,18 +39,18 @@ const HeroHome: React.FC<{ id?: string }> = ({ id }) => {
       </Fade>
       <Flex flex={1} justify={'center'} align={'center'} position={'relative'} w={'full'}>
         <Blob
-          w={'150%'}
+          w={'100%'}
           h={'150%'}
           position={'absolute'}
           top={'-20%'}
           left={0}
           zIndex={-1}
-          color={useColorModeValue('red.50', 'red.400')}
+          color={useColorModeValue('red.100', 'red.300')}
         />
         <Fade bottom>
           <Box
             position={'relative'}
-            h={{ base: 'full', md: '300px' }}
+            h={{ base: 'full', tablet: '300px' }}
             rounded={'2xl'}
             boxShadow={'2xl'}
             overflow={'hidden'}
@@ -72,7 +63,7 @@ const HeroHome: React.FC<{ id?: string }> = ({ id }) => {
               h={'100%'}
               src={
                 // 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
-                samara98.src
+                ssamsara98.src
               }
             />
           </Box>
@@ -82,17 +73,9 @@ const HeroHome: React.FC<{ id?: string }> = ({ id }) => {
   );
 };
 
-export default HeroHome;
-
 export const Blob: React.FC<IconProps> = (props) => {
   return (
-    <Icon
-      width={'100%'}
-      viewBox="0 0 578 440"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <Icon width={'100%'} viewBox="0 0 578 440" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"

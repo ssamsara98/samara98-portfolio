@@ -1,20 +1,16 @@
-import {
-  Box,
-  chakra,
-  Container,
-  Stack,
-  Text,
-  useColorModeValue,
-  VisuallyHidden,
-} from '@chakra-ui/react';
+"use client"
+import { Box, chakra, Container, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import React from 'react';
 
-const SocialButton: React.FC<{
+type SocialButtonProps = {
+  children: React.ReactNode;
   label: string;
   href: string;
-  newTab?: boolean;
-}> = ({ children, label, href, newTab = false }) => {
+  newTab: boolean;
+};
+
+function SocialButton({ children, label, href, newTab = false }: SocialButtonProps) {
   return (
     <chakra.button
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
@@ -37,14 +33,11 @@ const SocialButton: React.FC<{
       {children}
     </chakra.button>
   );
-};
+}
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
-    <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}
-    >
+    <Box bg={useColorModeValue('gray.50', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')}>
       <Container
         as={Stack}
         maxW={'6xl'}
@@ -67,5 +60,3 @@ const Footer: React.FC = () => {
     </Box>
   );
 };
-
-export default Footer;
