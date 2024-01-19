@@ -1,14 +1,8 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
-import './globals.css';
+import 'swiper/css/bundle';
+import './globals.scss';
 import { Providers } from './providers';
-
-const roboto = Roboto({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+import { open_sans, playfair_display, roboto } from './fonts';
 
 export const metadata: Metadata = {
   title: 'Sulthon AbdulMalik',
@@ -20,7 +14,10 @@ type RootLayoutProps = { children: React.ReactNode };
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning className={`${roboto.className}`}>
+      <body
+        suppressHydrationWarning
+        className={`${roboto.className} ${open_sans.variable} ${playfair_display.variable}`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -1,0 +1,58 @@
+// @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+// Product Swiper
+#product-swiper {
+  // & .swiper-wrapper {
+  //   &:first-child {
+  //     margin-left: 200px;
+  //   }
+  //   &:last-child {
+  //     margin-right: 200px;
+  //   }
+  // }
+
+  & .swiper-slide {
+    width: 240px;
+    border-radius: 16px;
+
+    &:nth-child(4n + 1) {
+      background-color: var(--chakra-colors-inwood-green);
+    }
+    &:nth-child(4n + 2) {
+      background-color: var(--chakra-colors-inwood-blue);
+    }
+    &:nth-child(4n + 3) {
+      background-color: var(--chakra-colors-inwood-purple);
+    }
+    &:nth-child(4n + 0) {
+      background-color: var(--chakra-colors-inwood-yellow);
+    }
+
+    &:first-child {
+      margin-left: 10px;
+      @media (min-width: 768px) {
+        margin-left: 20px;
+      }
+      @media (min-width: 768px) {
+        margin-left: 40px;
+      }
+      @media (min-width: 1024px) {
+        margin-left: 144px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      width: 420px;
+    }
+  }
+}
+
+#our-creation-swiper {
+  & .swiper-slide {
+    width: 200px;
+
+    @media (min-width: 768px) {
+      width: 360px;
+    }
+  }
+}

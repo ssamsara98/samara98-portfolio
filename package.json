@@ -23,7 +23,9 @@
     "react-dom": "^18",
     "react-icons": "^4.12.0",
     "react-reveal": "^1.2.2",
-    "sharp": "^0.33.0"
+    "sass": "^1.70.0",
+    "sharp": "^0.33.0",
+    "swiper": "^11"
   },
   "devDependencies": {
     "@types/node": "^20",
