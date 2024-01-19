@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@chakra-ui/react';
-import {Footer} from '~/components/footer';
-import {Navbar} from '~/components/header';
+import { Footer } from '~/components/footer';
+import { Navbar } from '~/components/header';
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
   return (

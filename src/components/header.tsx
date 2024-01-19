@@ -53,7 +53,7 @@ export function Navbar() {
             fontWeight={'bold'}
           >
             <Link as={NLink} href="/">
-              Samara98
+              ssamsara98
             </Link>
           </Text>
 

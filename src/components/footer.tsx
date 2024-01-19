@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import { Box, chakra, Container, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import React from 'react';
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
       >
         <Text>© {new Date().getFullYear()} Sulthon Abdul Malik | All rights reserved</Text>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Github'} href={'https://github.com/samara98'} newTab>
+          <SocialButton label={'Github'} href={'https://github.com/ssamsara98'} newTab>
             <FaGithub />
           </SocialButton>
           <SocialButton label={'LinkedIn'} href={'https://linkedin.com/in/sulthon-am'} newTab>

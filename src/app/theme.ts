@@ -1,14 +1,14 @@
-import { ThemeConfig, extendTheme } from "@chakra-ui/react";
+import { ThemeConfig, extendTheme } from '@chakra-ui/react';
 
 const config: ThemeConfig = {
   initialColorMode: 'light',
   useSystemColorMode: false,
 };
 
-const colors = {
-};
+const colors = {};
 const breakpoints = {
   tablet: '48em',
+  tabletl: '64em',
   laptop: '80em',
   desktop: '96em',
 };
