@@ -1,0 +1,64 @@
+/* Jumbotron Swiper */
+.jumbotron-swiper .swiper-wrapper {
+  padding-bottom: 80px;
+}
+.jumbotron-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #e6dd3b8f;
+  background: none;
+  opacity: 1;
+}
+.jumbotron-swiper .swiper-pagination-bullet-active {
+  background: #e6dd3b;
+}
+
+/* Product Swiper */
+.productSwiper-button-prev.swiper-button-disabled,
+.productSwiper-button-next.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: auto;
+  pointer-events: none;
+}
+
+/* Testimoni Swiper */
+.testimoni-swiper .swiper-wrapper {
+  padding-bottom: 56px;
+}
+.testimoni-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  // border: 2px solid;
+  background-color: var(--chakra-colors-plantshop-green);
+  opacity: 0.5;
+}
+.testimoni-swiper .swiper-pagination-bullet-active {
+  background-color: var(--chakra-colors-plantshop-green);
+  opacity: 1;
+}
+
+.box .bg-hover {
+  background: rgba(30, 111, 92, 0.52);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle(0% at 100% 0);
+  transition: 0.5s ease-in-out;
+}
+.box:hover .bg-hover {
+  clip-path: circle(140% at 100% 0);
+  // transition: 2s ease-in-out;
+}
+.bg-hover .bg-text {
+  // font-family: var(--heading-font);
+  color: var(--chakra-colors-plantshop-cream);
+  font-size: 25px;
+  font-weight: 800;
+}
