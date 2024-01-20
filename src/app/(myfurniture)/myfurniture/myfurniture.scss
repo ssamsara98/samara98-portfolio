@@ -1,0 +1,19 @@
+// swiper popular categories
+#popular-categories-swiper .swiper-slide {
+  width: 300px;
+}
+
+// swiper blog
+#blog-swiper .swiper-slide {
+  width: 300px;
+}
+#blog-swiper .swiper-wrapper {
+  padding-bottom: 64px;
+}
+#blog-swiper .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+}
+#blog-swiper .swiper-pagination-bullet-active {
+  background: var(--chakra-colors-furniture-secondary);
+}
