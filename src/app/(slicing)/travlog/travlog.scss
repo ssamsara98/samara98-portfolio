@@ -1,0 +1,31 @@
+// swiper destinations
+#destinations-swiper {
+  & .swiper-slide {
+    // background-color: aqua;
+
+    @media (min-width: 768px) {
+      width: 212px;
+    }
+    @media (min-width: 1280px) {
+      width: 372px;
+    }
+  }
+}
+
+#testimonials-swiper {
+  & .swiper-wrapper {
+    padding-bottom: 80px;
+  }
+
+  & .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    // border: 2px solid #97266d;
+    background-color: rgba(#97266d, 0.2);
+    opacity: 1;
+  }
+
+  & .swiper-pagination-bullet-active {
+    background-color: #d53f8c;
+  }
+}
