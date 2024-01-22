@@ -38,10 +38,10 @@ const fonts = {
 };
 
 const breakpoints = {
-  tablet: '48em',
-  tabletl: '64em',
-  laptop: '80em',
-  desktop: '96em',
+  tablet: '48em', // 768px
+  tabletl: '64em', // 1024px
+  laptop: '80em', // 1280px
+  desktop: '96em', // 1536px
 };
 
 export const theme = extendTheme({

@@ -52,7 +52,7 @@ export function PlantShop() {
           >
             {srvs.map((serv, idx) => (
               <SwiperSlide key={idx}>
-                <Image src={serv.img.src} margin={'auto'} />
+                <Image src={serv.img.src} alt={serv.img.src} margin={'auto'} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -94,7 +94,7 @@ export function PlantShop() {
         <Flex gap={6} align={'center'} justify={'space-between'}>
           {services.map((serv, idx) => (
             <Box key={idx} borderRadius={'xl'} overflow={'hidden'} position={'relative'} className="box">
-              <Image src={serv.img.src} w={'330px'} h={'342px'} objectFit={'cover'} />
+              <Image src={serv.img.src} alt={serv.img.src} w={'330px'} h={'342px'} objectFit={'cover'} />
               <Box className="bg-hover">
                 <Text className="bg-text">Calathea lutea</Text>
               </Box>
@@ -133,6 +133,7 @@ export function PlantShop() {
           </Box>
           <Image
             src={home2.src}
+            alt={home2.src}
             position={'absolute'}
             bottom={-10}
             right={-10}
@@ -148,7 +149,15 @@ export function PlantShop() {
               <br />
               30% OFF
             </Text>
-            <Image src={home3.src} position={'absolute'} bottom={-20} right={-5} h={'312px'} objectFit={'cover'} />
+            <Image
+              src={home3.src}
+              alt={home3.src}
+              position={'absolute'}
+              bottom={-20}
+              right={-5}
+              h={'312px'}
+              objectFit={'cover'}
+            />
           </Flex>
           <Flex
             flex={1}
@@ -165,7 +174,15 @@ export function PlantShop() {
               <br />
               30% OFF
             </Text>
-            <Image src={home1.src} position={'absolute'} bottom={-20} left={-5} h={'312px'} objectFit={'cover'} />
+            <Image
+              src={home1.src}
+              alt={home1.src}
+              position={'absolute'}
+              bottom={-20}
+              left={-5}
+              h={'312px'}
+              objectFit={'cover'}
+            />
           </Flex>
         </Flex>
       </Flex>
@@ -235,7 +252,7 @@ export function PlantShop() {
                 >
                   {/* <Text>{idx}</Text> */}
                   <Flex flex={'1 1 50%'} justify={'center'} align={'center'}>
-                    <Image src={product.img.src} objectFit={'cover'} h={'240px'} />
+                    <Image src={product.img.src} alt={product.img.src} objectFit={'cover'} h={'240px'} />
                   </Flex>
                   <Box>
                     <Text color={'plantshop.cream'} fontSize={'2xl'} fontWeight={'bold'}>
@@ -357,7 +374,7 @@ export function PlantShop() {
           <Text fontWeight={'bold'} fontSize={'3xl'} whiteSpace={'pre-wrap'}>
             Do you have any problem?{'\n'}contact us immediately
           </Text>
-          <Image src={customerService.src} w={'600px'} h={'400px'} />
+          <Image src={customerService.src} alt={customerService.src} w={'600px'} h={'400px'} />
         </Box>
 
         <Flex as="form" direction={'column'} gap={5} flex={'1'}>

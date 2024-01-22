@@ -216,6 +216,7 @@ export default function InWoodClient() {
                 {/* <Box textAlign={'center'} mb={'10'}> */}
                 <Image
                   src={product.image.src}
+                  alt={product.image.src}
                   width={'full'}
                   h={{ base: '127px', tablet: '250px' }}
                   objectFit={'contain'}
@@ -501,7 +502,12 @@ export default function InWoodClient() {
           >
             {ourCreations.map((item, idx) => (
               <SwiperSlide key={idx}>
-                <Image h={{ base: '275px', tablet: '500px' }} bgColor={'inwood.gray'} src={item.image} />
+                <Image
+                  h={{ base: '275px', tablet: '500px' }}
+                  bgColor={'inwood.gray'}
+                  src={item.image}
+                  alt={item.image}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -715,7 +721,7 @@ export default function InWoodClient() {
       >
         <Flex gap={'6'} direction={'column'}>
           <Box>
-            <Image src={inwoodLogoImg.src} h={'10'} />
+            <Image src={inwoodLogoImg.src} alt={inwoodLogoImg.src} h={'10'} />
           </Box>
           <Flex gap={'8'} fontSize={'3xl'}>
             <Icon as={FaFacebook} />

@@ -28,11 +28,16 @@ export default function InWoodLayout({ children }: InWoodLayoutProps) {
   return (
     <>
       {/* Navbar */}
-      <Box w={'full'} position={'fixed'} py={'7'} zIndex={'10'} bgColor={'transparent'} color={'inwood.primaryDark'}>
+      <Box w={'full'} position={'fixed'} py={'7'} zIndex={'10'} bgColor={'white'} color={'inwood.primaryDark'}>
         <InContainer>
           <Flex justify={'space-between'} fontSize={'2xl'}>
             {/* Logo */}
-            <Image src={inwoodLogoImg.src} order={{ base: '1', tablet: '0' }} h={{ base: '6', tablet: '10' }} />
+            <Image
+              src={inwoodLogoImg.src}
+              alt={inwoodLogoImg.src}
+              order={{ base: '1', tablet: '0' }}
+              h={{ base: '6', tablet: '10' }}
+            />
 
             {/* menu */}
             <Box order={{ base: '0', tablet: '1' }}>

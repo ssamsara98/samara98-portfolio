@@ -51,8 +51,8 @@ export function MyFurniture() {
           </Box>
 
           <Box position={'relative'} flex={'1'} display={{ base: 'none', lg: 'block' }}>
-            <Image src={clockImg.src} position={'absolute'} top={'-24'} right={'0'} />
-            <Image src={sofaImg.src} position={'absolute'} bottom={'-20'} right={'0'} />
+            <Image src={clockImg.src} alt={clockImg.src} position={'absolute'} top={'-24'} right={'0'} />
+            <Image src={sofaImg.src} alt={sofaImg.src} position={'absolute'} bottom={'-20'} right={'0'} />
           </Box>
         </MyContainer>
       </Box>
@@ -98,7 +98,7 @@ export function MyFurniture() {
                     </Button>
                   </Flex>
                   {/* <Box flex={'1'}></Box> */}
-                  <Image src={service.image.src} h={'200px'} flex={'1'} objectFit={'contain'} />
+                  <Image src={service.image.src} alt={service.image.src} h={'200px'} flex={'1'} objectFit={'contain'} />
                 </Flex>
               </Box>
             ))}
@@ -118,6 +118,7 @@ export function MyFurniture() {
         >
           <Image
             src={sofaImg.src}
+            alt={sofaImg.src}
             w={'380px'}
             h={'200px'}
             position={'absolute'}
@@ -204,6 +205,7 @@ export function MyFurniture() {
                   >
                     <Image
                       src={category.image.src}
+                      alt={category.image.src}
                       htmlHeight={'200px'}
                       p={'30px'}
                       objectFit={'contain'}
@@ -254,6 +256,7 @@ export function MyFurniture() {
                   <Box h={'300px'} w={'full'} bgColor={'furniture.primary'} position={'relative'}>
                     <Image
                       src={product.image.src}
+                      alt={product.image.src}
                       w={'125px'}
                       h={'200px'}
                       position={'absolute'}
@@ -333,7 +336,7 @@ export function MyFurniture() {
                 </Flex>
               </Box>
 
-              <Image src={deal.image.src} zIndex={0} />
+              <Image src={deal.image.src} alt={deal.image.src} zIndex={0} />
             </Flex>
           ))}
         </SimpleGrid>
@@ -378,7 +381,7 @@ export function MyFurniture() {
 
                 <Card key={idx1} shadow={'2xl'}>
                   <CardBody>
-                    <Image src={blog1.image.src} />
+                    <Image src={blog1.image.src} alt={blog1.image.src} />
 
                     <Stack mt={'6'} spacing="2">
                       <Heading size="md">{blog1.title}</Heading>
@@ -404,7 +407,7 @@ export function MyFurniture() {
           </Box>
 
           <Flex gap={'6'} flexWrap={'wrap'}>
-            <Image src={contactusImg.src} flex={'1'} />
+            <Image src={contactusImg.src} alt={contactusImg.src} flex={'1'} />
 
             <Flex as="form" flex={'1'} direction={'column'} gap={'8'}>
               <Box>
